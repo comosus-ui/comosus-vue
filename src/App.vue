@@ -1,28 +1,26 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png" />
-    <HelloWorld msg="Welcome to Your Vue.js App" />
+    <ComosusProvider :theme="theme">
+      <SceneButton />
+    </ComosusProvider>
   </div>
 </template>
 
 <script>
-import HelloWorld from "./components/HelloWorld.vue";
+import SceneButton from "./components/SceneButton.vue";
+import { ComosusProvider } from "./comosus";
+import theme from "./theme";
 
 export default {
   name: "app",
   components: {
-    HelloWorld
+    ComosusProvider,
+    SceneButton
+  },
+  data() {
+    return {
+      theme
+    };
   }
 };
 </script>
-
-<style>
-#app {
-  font-family: "Avenir", Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
-</style>
